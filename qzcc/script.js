@@ -20,7 +20,6 @@ const xhr = new XMLHttpRequest();
 const mqurl =
   mnurg +
   "AKfycbyvClzLuZi9-TPGNaAzw6rAPIhSKg3TahZ8rUaUSI1imbDZnLpNmmnudrYGfb_ehwnB/exec";
-
 const queryString = Object.entries(parameters)
   .map(([key, value]) => `${key}=${value}`)
   .join("&");
