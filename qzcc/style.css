@@ -71,14 +71,15 @@ body {
   background-color: #ededed;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-  color: #202020;
+  color: #3a3a3a;
   font-size: 14px !important;
-  font-weight: 600;
+  font-weight: 500;
 }
 .qzinfo span {
   float: right;
   font-size: 14px;
   font-weight: 500;
+  font-weight: lighter !important;
   margin-top: 5px;
 }
 
