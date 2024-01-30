@@ -259,7 +259,7 @@ function ctrlqzadt(e) {
   const divElement = document.getElementById("prevcont");
   divElement.innerHTML = "";
 
-  for (var k = 1; k < len; k++) {
+  for (var k = len - 1; k >= 0; k--) {
     var qzstElement = document.createElement("div");
     qzstElement.className = "qzaldt";
 
