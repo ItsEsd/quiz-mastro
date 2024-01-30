@@ -119,11 +119,128 @@ a {
 }
 #prevcont {
   padding: 20px;
-  background: #8d8d8d9f;
+  background: #3636369f;
   max-width: 960px;
   margin-top: 20px;
-  height: 350px;
+  height: 66vh;
   border-radius: 10px;
+  overflow-y: auto;
+}
+#rfshqzdt {
+  bottom: 65px;
+  right: 20px;
+  position: fixed;
+  border: 0px;
+  background-color: #282828;
+  padding: 10px 20px;
+  color: #ededed;
+  cursor: pointer;
+}
+.qzaldt-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Adjust as needed */
+}
+
+.qzaldt {
+  flex: 1 1 calc(20% - 20px);
+  text-align: left;
+  background-color: #00000041;
+  min-width: 210px;
+  font-size: 14px;
+  margin: 10px;
+  margin-bottom: 19px;
+  padding: 7px;
+  border-radius: 10px;
+  cursor: pointer;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.qzaldt:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 2px 15px 0px #ffffff4c;
+  transition: 0.2s;
+}
+.qzaldt p {
+  margin: 0px;
+  line-height: 2;
+}
+.qztt {
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #ededed;
+  color: #4f4f4f;
+  padding: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.qzst {
+  padding: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.qzdt {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  text-align: right;
+  z-index: 999;
+  color: black;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+#passDiv {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  background-color: #00000082;
+  position: fixed;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#passDiv div {
+  margin-top: -60px;
+  background-color: white;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+#passDiv label {
+  font-size: 14px;
+  font-weight: bold;
+  opacity: 0.6;
+  width: 30%;
+}
+
+#passDiv input {
+  float: right;
+  width: 65%;
+  height: 30px;
+  font-size: 16px;
+  font-family: "Courier New", Courier, monospace;
+  color: red;
+  font-weight: 600;
+  padding-left: 10px;
+}
+
+#passDiv button {
+  width: 48.5%;
+  padding: 10px 10px;
+  margin: 1px;
+  margin-top: 10px;
+  border: 0px;
+  color: white;
+}
+.pvtqzps {
+  background-color: #04ab04;
+}
+.pvtqzcls {
+  background-color: #363636;
 }
 #iframeContainer {
   background-color: #171717bf;
@@ -138,5 +255,5 @@ a {
   background-color: #fdc75a;
 }
 #closeButtonfrm {
-  background: #ffdc96;
+  background: #ffba59;
 }
