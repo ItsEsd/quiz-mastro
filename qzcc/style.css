@@ -29,6 +29,7 @@ body {
   padding: 20px;
   margin: 0px;
   padding-bottom: 180px;
+  padding-top: 30px;
 }
 #maincon h3 {
   color: white;
@@ -321,7 +322,8 @@ a {
   padding: 10px;
   color: #282828;
   background-color: #ededed;
-  max-height: 200px !important;
+  min-height: 100px;
+  max-height: 210px !important;
   overflow-y: auto !important;
   font-size: 18px;
 }
