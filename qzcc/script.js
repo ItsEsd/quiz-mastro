@@ -72,9 +72,9 @@ if (hasRequiredParameters) {
           quizContainer.appendChild(quizInfoDiv);
 
           const questionDiv = document.createElement("div");
-          questionDiv.innerHTML = `<p><span style='font-size:16px;'>Question:</span><br><br>${
+          questionDiv.innerHTML = `<p><span style='font-size:16px;'>Question:</span></p><div class='questionstcon'>${
             questions[currentQuestion - 1].questionStatement
-          }</p>`;
+          }</div>`;
           quizContainer.appendChild(questionDiv);
 
           const optionsDiv = document.createElement("div");
@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
     iframeContainer.style.zIndex = "9999";
     iframeContainer.id = "iframeContainer";
     const iframe = document.createElement("iframe");
-    iframe.src = "https://mastrowall.com/quiz-editor/";
+    iframe.src = "https://mastrowall.com/quiz-editor";
     iframe.style.width = "100%";
     iframe.style.height = "95.5vh";
     iframe.style.border = "none";
@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function () {
     closeButton.style.left = "50%";
     closeButton.style.transform = "translate(-50%, -50%)";
     closeButton.style.width = "100%";
-    closeButton.style.maxWidth = "701px";
+    closeButton.style.maxWidth = "1101px";
     closeButton.style.cursor = "pointer";
     closeButton.style.padding = "10px";
     closeButton.style.zIndex = "9999";
@@ -278,22 +278,32 @@ $("#rfshqzdt").click(function () {
   getqzdt();
 });
 
+function generateRandomColor(minBrightness = 50, maxBrightness = 200) {
+  const getRandomComponent = () => Math.floor(Math.random() * 256);
+  let red, green, blue, brightness;
+  do {
+    red = getRandomComponent();
+    green = getRandomComponent();
+    blue = getRandomComponent();
+    brightness = (299 * red + 587 * green + 114 * blue) / 1000;
+  } while (brightness < minBrightness || brightness > maxBrightness);
+  const randomColor = `rgb(${red},${green},${blue})`;
+  return randomColor;
+}
+
 function ctrlqzadt(e) {
   var res = e.records;
   var len = res.length;
   const divElement = document.getElementById("prevcont");
   divElement.innerHTML = "";
-
   for (var k = len - 1; k >= 1; k--) {
     var qzstElement = document.createElement("div");
     qzstElement.className = "qzaldt";
-
     if (res[k].QState === "Private") {
       qzstElement.style.background = "#b1b1b1";
     } else {
-      qzstElement.style.background = "#ffba59";
+      qzstElement.style.background = generateRandomColor(125, 150);
     }
-
     qzstElement.innerHTML = `<div onclick="opnqznw(this)">
   <p class="qztt">${JSON.parse(atob(res[k].QZdata)).quizTitle}</p>
   <p class="qzid" style="display:none;">${res[k].QId}</p>
