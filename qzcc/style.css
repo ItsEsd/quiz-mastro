@@ -80,7 +80,7 @@ body {
 }
 .qzinfo span {
   float: right;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   font-weight: lighter !important;
   margin-top: 5px;
@@ -137,12 +137,24 @@ a {
   right: 20px;
   position: fixed;
   border: 0px;
-  background-color: #282828;
+  background-color: #2b47fbe1;
   padding: 10px 20px;
   color: #ededed;
   cursor: pointer;
   z-index: 2000;
+  box-shadow: 0px 2px 15px 0px #ffffffc8;
 }
+.notification {
+  position: fixed;
+  bottom: 38px;
+  width: 100%;
+  background-color: #ed4040;
+  color: white;
+  padding: 5px;
+  z-index: 2000;
+  text-align: center;
+}
+
 .qzaldt-container {
   display: flex;
   flex-wrap: wrap;
@@ -263,4 +275,44 @@ a {
 }
 #closeButtonfrm {
   background: #ffba59;
+}
+#qzlnkfnc {
+  margin-top: 100px;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0000007e;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+#qzlnkfnc span {
+  color: #dadada;
+}
+#lnkelm {
+  margin-bottom: 20px;
+  text-align: left;
+}
+#emdelm {
+  text-align: left;
+}
+#lnkelm input {
+  width: 100%;
+  max-width: 500px;
+  border: 2px solid #f47f7fb8;
+  border-radius: 5px;
+  padding: 2px;
+  margin-top: 5px;
+  background-color: #c1c1c19d;
+}
+
+#emdelm input {
+  margin-top: 5px;
+  width: 100%;
+  max-width: 500px;
+  border: 2px solid #f47f7fb8;
+  border-radius: 5px;
+  padding: 2px;
+  background-color: #c1c1c19d;
 }

@@ -13,10 +13,8 @@ const parameters = {};
 const mnurg = "https://script.google.com/macros/s/";
 const urlSearchParams = new URLSearchParams(new URL(currentURL).search);
 
-// Specify the required parameters you are checking for
 const requiredParameters = ["qid", "v"];
 
-// Check if all required parameters are present
 const hasRequiredParameters = requiredParameters.every((param) =>
   urlSearchParams.has(param)
 );
@@ -177,6 +175,33 @@ if (hasRequiredParameters) {
 
         createQuiz();
 
+        var lnkelm = document.createElement("div");
+        var emdelm = document.createElement("div");
+        lnkelm.id = "lnkelm";
+        emdelm.id = "emdelm";
+        var qzlnk = getCurrentURL();
+        var emdfrm = `<iframe src='${qzlnk}' style='width:100%;height:500px;border:0px;'></iframe>`;
+        lnkelm.innerHTML = `<span>Quiz link:</span> <input id="lnkInput" value="${qzlnk}" onclick="copyToClipboard('lnkInput')" readonly/>`;
+        emdelm.innerHTML = `<span>Embed:</span> <input id="emdInput" value="${emdfrm}" onclick="copyToClipboard('emdInput')" readonly/>`;
+        document.getElementById("qzlnkfnc").appendChild(lnkelm);
+        document.getElementById("qzlnkfnc").appendChild(emdelm);
+        document.getElementById("qzlnkfnc").style.display = "block";
+
+        window.copyToClipboard = function (inputId) {
+          var inputElement = document.getElementById(inputId);
+          inputElement.select();
+          document.execCommand("copy");
+
+          var notification = document.createElement("div");
+          notification.className = "notification";
+          notification.textContent = "Copied to clipboard!";
+          document.body.appendChild(notification);
+
+          setTimeout(function () {
+            document.body.removeChild(notification);
+          }, 2000);
+        };
+
         document
           .getElementById("submit-button")
           .addEventListener("click", submitQuiz);
@@ -270,14 +295,14 @@ function ctrlqzadt(e) {
     }
 
     qzstElement.innerHTML = `<div onclick="opnqznw(this)">
-      <p class="qztt">${JSON.parse(atob(res[k].QZdata)).quizTitle}</p>
-      <p class="qzid" style="display:none;">${res[k].QId}</p>
-      <p class="qzps" style="display:none;">${res[k].QPass}</p>
-      <p class="qzst">${res[k].QState}</p>
-      <p class="qzdt">Date: ${
-        JSON.parse(atob(res[k].QZdata)).creationDate
-      }</p></div>
-    `;
+  <p class="qztt">${JSON.parse(atob(res[k].QZdata)).quizTitle}</p>
+  <p class="qzid" style="display:none;">${res[k].QId}</p>
+  <p class="qzps" style="display:none;">${res[k].QPass}</p>
+  <p class="qzst">${res[k].QState}</p>
+  <p class="qzdt">Date: ${
+    JSON.parse(atob(res[k].QZdata)).creationDate
+  }</p></div>
+  `;
     divElement.appendChild(qzstElement);
   }
   divElement.innerHTML += `<button id="rfshqzdt" onclick="getqzdt()">Refresh</button>`;
@@ -294,11 +319,11 @@ function opnqznw(element) {
     var passDiv = document.createElement("div");
     passDiv.id = "passDiv";
     passDiv.innerHTML = `
-   <div><label for="quizPassword">Enter Quiz Pass:</label>
-   <input type="text" id="quizPassword" autocomplete="off"/>
-   <button onclick="checkPassword('${qp}')" class="pvtqzps">Go</button>
-   <button onclick="closePasswordDiv()" class="pvtqzcls">Close</button></div>
- `;
+  <div><label for="quizPassword">Enter Quiz Pass:</label>
+  <input type="text" id="quizPassword" autocomplete="off"/>
+  <button onclick="checkPassword('${qp}')" class="pvtqzps">Go</button>
+  <button onclick="closePasswordDiv()" class="pvtqzcls">Close</button></div>
+  `;
     document.body.appendChild(passDiv);
   } else {
     var link = "https://quiz.mastrowall.com?qid=" + qd + "&v=" + qp;
