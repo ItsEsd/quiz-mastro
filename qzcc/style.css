@@ -13,6 +13,7 @@ body {
   margin-top: 20px;
   font-size: 16px;
   border: 0px;
+  max-width: 100%;
   border-radius: 5px;
   padding: 10px 15px;
   background: #ffba59;
@@ -57,6 +58,11 @@ body {
   text-align: left;
   padding: 20px;
   word-wrap: break-word;
+  font-weight: 600;
+}
+.qsnumb {
+  padding: 5px 10px;
+  background-color: #000000cc;
 }
 #submit-button {
   bottom: 65px;
@@ -77,7 +83,7 @@ body {
   background-color: #ffebbb;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-  color: #3a3a3a;
+  color: #1f1f1f;
   font-size: 14px !important;
   font-weight: 500;
 }
@@ -149,13 +155,14 @@ a {
 }
 .notification {
   position: fixed;
-  bottom: 38px;
+  bottom: 30px;
   width: 100%;
-  background-color: #ed4040;
+  background-color: #ed4040ee;
   color: white;
   padding: 5px;
   z-index: 2000;
   text-align: center;
+  font-size: 14px;
 }
 
 .qzaldt-container {
@@ -279,10 +286,25 @@ a {
 #closeButtonfrm {
   background: #ffba59;
 }
+#shwlkemd {
+  left: 20px;
+  bottom: 80px;
+  position: fixed;
+  cursor: pointer;
+  opacity: 0.9;
+  display: none;
+}
+#shwlkemd:hover {
+  opacity: 0.8;
+}
+#shwlkemd svg {
+  width: 40px;
+  height: 40px;
+  color: white;
+}
 #qzlnkfnc {
   margin-top: 100px;
   max-width: 600px;
-  display: flex;
   justify-content: center;
   align-items: center;
   background-color: #0000007e;
@@ -294,11 +316,15 @@ a {
   color: #dadada;
 }
 #lnkelm {
+  width: 100%;
   margin-bottom: 20px;
   text-align: left;
+  display: block;
 }
 #emdelm {
+  width: 100%;
   text-align: left;
+  display: block;
 }
 #lnkelm input {
   width: 100%;
@@ -328,4 +354,10 @@ a {
   max-height: 210px !important;
   overflow-y: auto !important;
   font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+  .option-button {
+    font-size: 14px;
+  }
 }

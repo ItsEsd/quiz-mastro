@@ -67,12 +67,12 @@ if (hasRequiredParameters) {
 
           const quizInfoDiv = document.createElement("div");
           quizInfoDiv.classList.add("quiz-info");
-          quizInfoDiv.innerHTML = `<p>${quizData.quizTitle}<span>${quizData.quizId} | ${quizData.creationDate}</span></p>`;
+          quizInfoDiv.innerHTML = `<p>${quizData.quizTitle}<span>${quizData.quizId} | Date: ${quizData.creationDate}</span></p>`;
           quizInfoDiv.classList.add("qzinfo");
           quizContainer.appendChild(quizInfoDiv);
 
           const questionDiv = document.createElement("div");
-          questionDiv.innerHTML = `<p><span style='font-size:16px;'>Question:</span></p><div class='questionstcon'>${
+          questionDiv.innerHTML = `<p><span style='font-size:16px;'>Question: <span class="qsnumb">${currentQuestion}</span></span></p><div class='questionstcon'>${
             questions[currentQuestion - 1].questionStatement
           }</div>`;
           quizContainer.appendChild(questionDiv);
@@ -181,11 +181,11 @@ if (hasRequiredParameters) {
         emdelm.id = "emdelm";
         var qzlnk = getCurrentURL();
         var emdfrm = `<iframe src='${qzlnk}' style='width:100%;height:500px;border:0px;'></iframe>`;
-        lnkelm.innerHTML = `<span>Quiz link:</span> <input id="lnkInput" value="${qzlnk}" onclick="copyToClipboard('lnkInput')" readonly/>`;
-        emdelm.innerHTML = `<span>Embed:</span> <input id="emdInput" value="${emdfrm}" onclick="copyToClipboard('emdInput')" readonly/>`;
+        lnkelm.innerHTML = `<p><span>Quiz link:</span> <input id="lnkInput" value="${qzlnk}" onclick="copyToClipboard('lnkInput')" readonly/></p>`;
+        emdelm.innerHTML = `<p><span>Embed:</span> <input id="emdInput" value="${emdfrm}" onclick="copyToClipboard('emdInput')" readonly/></p>`;
         document.getElementById("qzlnkfnc").appendChild(lnkelm);
         document.getElementById("qzlnkfnc").appendChild(emdelm);
-        document.getElementById("qzlnkfnc").style.display = "block";
+        document.getElementById("shwlkemd").style.display = "block";
 
         window.copyToClipboard = function (inputId) {
           var inputElement = document.getElementById(inputId);
@@ -358,3 +358,8 @@ function checkPassword(correctPassword) {
 function closePasswordDiv() {
   document.getElementById("passDiv").remove();
 }
+
+$("#shwlkemd").click(function () {
+  $("#qzlnkfnc").toggle();
+  window.scrollTo(0, document.body.scrollHeight);
+});
