@@ -31,7 +31,7 @@ body {
 #maincon {
   padding: 20px;
   margin: 0px;
-  padding-bottom: 140px;
+  padding-bottom: 180px;
   padding-top: 30px;
 }
 #maincon h3 {
@@ -359,5 +359,7 @@ a {
 @media screen and (max-width: 768px) {
   .option-button {
     font-size: 14px;
+    padding: 6px 10px;
+    text-align: left;
   }
 }
